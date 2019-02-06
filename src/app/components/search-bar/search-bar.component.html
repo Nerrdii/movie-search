@@ -1,0 +1,11 @@
+<form (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <input
+      type="text"
+      matInput
+      name="searchTerm"
+      [(ngModel)]="searchTerm"
+      placeholder="Search..."
+    />
+  </mat-form-field>
+</form>
