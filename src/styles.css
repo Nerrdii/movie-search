@@ -1,4 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.container {
+  padding: 2rem;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.ml-3 {
+  margin-left: 1rem;
+}

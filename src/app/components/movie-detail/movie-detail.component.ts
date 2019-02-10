@@ -11,7 +11,7 @@ import { MovieService } from '../../services/movie.service';
   styleUrls: ['./movie-detail.component.css']
 })
 export class MovieDetailComponent implements OnInit {
-  movie: Observable<Movie>;
+  $movie: Observable<Movie>;
 
   constructor(
     private route: ActivatedRoute,
@@ -20,7 +20,7 @@ export class MovieDetailComponent implements OnInit {
 
   ngOnInit() {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.movie = this.movieService.getMovie(id);
+    this.$movie = this.movieService.getMovie(id);
   }
 
   getPosterPath(movie: Movie) {

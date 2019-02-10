@@ -1,5 +1,21 @@
-<div *ngIf="(movie | async) as movie">
-  <div>
-    <h2>{{ movie.title }}</h2>
+<div class="d-flex" *ngIf="($movie | async) as movie">
+  <img src="{{ getPosterPath(movie) }}" alt="{{ movie.title }}" />
+  <div class="ml-3">
+    <h1>{{ movie.title }}</h1>
+    <p>
+      <i>{{ movie.tagline }}</i>
+    </p>
+    <h3>Details:</h3>
+    <p>Release Date: {{ movie.release_date | date }}</p>
+    <p>Runtime: {{ movie.runtime }} minutes</p>
+    <p>Rating: {{ movie.vote_average }} / 10</p>
+    <h3>Overview:</h3>
+    <p>{{ movie.overview }}</p>
+    <h3>Genres:</h3>
+    <ul>
+      <li *ngFor="let genre of movie.genres">
+        {{ genre.name }}
+      </li>
+    </ul>
   </div>
 </div>
