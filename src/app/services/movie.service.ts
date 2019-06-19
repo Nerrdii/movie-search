@@ -11,8 +11,8 @@ import { Response } from '../models/response.model';
   providedIn: 'root'
 })
 export class MovieService {
-  readonly BASE_API = 'https://api.themoviedb.org/3';
-  readonly BASE_IMAGE_URI = 'https://image.tmdb.org/t/p/w500';
+  private readonly BASE_API = 'https://api.themoviedb.org/3';
+  private readonly BASE_IMAGE_URI = 'https://image.tmdb.org/t/p/w500';
 
   constructor(private http: HttpClient) {}
 

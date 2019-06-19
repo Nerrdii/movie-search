@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
-import { MaterialModule } from './material.module';
 
 import { AppComponent } from './app.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
@@ -26,8 +25,7 @@ import { MovieDetailComponent } from './components/movie-detail/movie-detail.com
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpClientModule,
-    MaterialModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

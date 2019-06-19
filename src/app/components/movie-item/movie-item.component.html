@@ -1,12 +1,17 @@
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>{{ movie.title }}</mat-card-title>
-    <mat-card-subtitle
-      >Release Date: {{ movie.release_date | date }}</mat-card-subtitle
+<div class="card mb-3">
+  <img
+    src="{{ getPosterPath() }}"
+    alt="{{ movie.title }}"
+    class="card-img-top img-fluid"
+    style="width: 18rem;"
+  />
+  <div class="card-body">
+    <h5 class="card-title">{{ movie.title }}</h5>
+    <h6 class="card-subtitle text-muted mb-2">
+      Release Date: {{ movie.release_date | date }}
+    </h6>
+    <a class="btn btn-primary mt-3" [routerLink]="['/movies', movie.id]"
+      >Details</a
     >
-  </mat-card-header>
-  <img mat-card-image src="{{ getPosterPath() }}" alt="{{ movie.title }}" />
-  <mat-card-actions>
-    <a mat-button [routerLink]="['/movies', movie.id]">Details</a>
-  </mat-card-actions>
-</mat-card>
+  </div>
+</div>

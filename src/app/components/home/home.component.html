@@ -1,5 +1,8 @@
-<app-search-bar (search)="onSearch($event)"></app-search-bar>
-
-<div class="movie-list">
+<div class="row">
+  <div class="col-md-6 mx-auto">
+    <app-search-bar (search)="onSearch($event)"></app-search-bar>
+  </div>
+</div>
+<div class="card-deck mt-5">
   <app-movie-item *ngFor="let movie of movies" [movie]="movie"></app-movie-item>
 </div>

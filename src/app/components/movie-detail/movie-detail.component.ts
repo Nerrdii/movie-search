@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 
@@ -14,6 +15,7 @@ export class MovieDetailComponent implements OnInit {
   $movie: Observable<Movie>;
 
   constructor(
+    private location: Location,
     private route: ActivatedRoute,
     private movieService: MovieService
   ) {}
@@ -25,5 +27,9 @@ export class MovieDetailComponent implements OnInit {
 
   getPosterPath(movie: Movie) {
     return this.movieService.getPosterPath(movie);
+  }
+
+  goBack() {
+    this.location.back();
   }
 }

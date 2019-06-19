@@ -1,11 +1,13 @@
 <form (ngSubmit)="onSubmit()">
-  <mat-form-field>
+  <div class="form-group">
     <input
       type="text"
-      matInput
+      class="form-control"
       name="searchTerm"
+      id="searchTerm"
       [(ngModel)]="searchTerm"
-      placeholder="Search..."
+      placeholder="Search Movie..."
     />
-  </mat-form-field>
+  </div>
+  <input type="submit" value="Search" class="btn btn-primary btn-block" />
 </form>
