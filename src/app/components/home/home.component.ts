@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { Movie } from '../../models/movie.model';
-import { Response } from '../../models/response.model';
 import { MovieService } from '../../services/movie.service';
 
 @Component({
@@ -11,15 +10,15 @@ import { MovieService } from '../../services/movie.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  movies: Movie[];
+  movies$: Observable<Movie[]>;
 
   constructor(private movieService: MovieService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.movies$ = this.movieService.movies;
+  }
 
   onSearch(searchTerm: string) {
-    this.movieService
-      .searchMovies(searchTerm)
-      .subscribe((res: Response) => (this.movies = res.results));
+    this.movieService.searchMovies(searchTerm);
   }
 }
