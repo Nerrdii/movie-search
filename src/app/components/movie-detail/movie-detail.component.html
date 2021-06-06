@@ -1,5 +1,5 @@
 <button class="btn btn-secondary mb-3" (click)="goBack()">Go Back</button>
-<div class="d-flex" *ngIf="$movie | async as movie">
+<div class="d-flex" *ngIf="movie$ | async as movie">
   <img src="{{ getPosterPath(movie) }}" alt="{{ movie.title }}" />
   <div class="ml-3">
     <h1>{{ movie.title }}</h1>

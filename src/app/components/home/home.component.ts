@@ -7,18 +7,16 @@ import { MovieService } from '../../services/movie.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
   movies$: Observable<Movie[]>;
 
   constructor(private movieService: MovieService) {}
 
-  ngOnInit() {
-    this.movies$ = this.movieService.movies;
-  }
+  ngOnInit() {}
 
   onSearch(searchTerm: string) {
-    this.movieService.searchMovies(searchTerm);
+    this.movies$ = this.movieService.searchMovies(searchTerm);
   }
 }
