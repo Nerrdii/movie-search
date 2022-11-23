@@ -142,7 +142,6 @@
       }
     }
   },
-  "defaultProject": "movie-search",
   "cli": {
     "analytics": "867b8455-c64a-4c17-9726-4c537bbbc578"
   }
