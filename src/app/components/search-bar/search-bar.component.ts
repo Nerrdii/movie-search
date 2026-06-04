@@ -1,10 +1,11 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-search-bar',
     templateUrl: './search-bar.component.html',
     styleUrls: ['./search-bar.component.css'],
-    standalone: false
+    imports: [FormsModule]
 })
 export class SearchBarComponent implements OnInit {
   @Output() search = new EventEmitter<string>();
