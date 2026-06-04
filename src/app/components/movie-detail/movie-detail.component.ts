@@ -8,9 +8,10 @@ import { Movie } from '../../models/movie.model';
 import { MovieService } from '../../services/movie.service';
 
 @Component({
-  selector: 'app-movie-detail',
-  templateUrl: './movie-detail.component.html',
-  styleUrls: ['./movie-detail.component.css'],
+    selector: 'app-movie-detail',
+    templateUrl: './movie-detail.component.html',
+    styleUrls: ['./movie-detail.component.css'],
+    standalone: false
 })
 export class MovieDetailComponent implements OnInit {
   movie$: Observable<Movie>;
