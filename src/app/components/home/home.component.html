@@ -3,6 +3,10 @@
     <app-search-bar (search)="onSearch($event)"></app-search-bar>
   </div>
 </div>
-<div class="card-deck mt-5" *ngIf="movies$ | async as movies">
-  <app-movie-item *ngFor="let movie of movies" [movie]="movie"></app-movie-item>
-</div>
+@if (movies$ | async; as movies) {
+  <div class="card-deck mt-5">
+    @for (movie of movies; track movie) {
+      <app-movie-item [movie]="movie"></app-movie-item>
+    }
+  </div>
+}

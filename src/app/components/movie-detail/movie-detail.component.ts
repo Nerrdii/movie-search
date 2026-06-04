@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Location, NgIf, NgFor, AsyncPipe, DatePipe } from '@angular/common';
+import { Location, AsyncPipe, DatePipe } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
@@ -11,7 +11,7 @@ import { MovieService } from '../../services/movie.service';
     selector: 'app-movie-detail',
     templateUrl: './movie-detail.component.html',
     styleUrls: ['./movie-detail.component.css'],
-    imports: [NgIf, NgFor, AsyncPipe, DatePipe]
+    imports: [AsyncPipe, DatePipe]
 })
 export class MovieDetailComponent implements OnInit {
   movie$: Observable<Movie>;
