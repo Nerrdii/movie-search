@@ -1,5 +1,5 @@
 import 'hammerjs';
-import { enableProdMode, importProvidersFrom } from '@angular/core';
+import { enableProdMode, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 
@@ -17,7 +17,7 @@ if (environment.production) {
 
 bootstrapApplication(AppComponent, {
     providers: [
-        importProvidersFrom(BrowserModule, AppRoutingModule, FormsModule),
+        provideZoneChangeDetection(),importProvidersFrom(BrowserModule, AppRoutingModule, FormsModule),
         provideHttpClient(withInterceptorsFromDi()),
         provideAnimations(),
     ]
