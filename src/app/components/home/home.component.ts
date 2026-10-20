@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { Movie } from '../../models/movie.model';
@@ -11,6 +11,7 @@ import { MovieItemComponent } from '../movie-item/movie-item.component';
     selector: 'app-home',
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [SearchBarComponent, MovieItemComponent, AsyncPipe]
 })
 export class HomeComponent implements OnInit {

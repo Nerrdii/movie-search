@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 
 import { Movie } from '../../models/movie.model';
 import { MovieService } from '../../services/movie.service';
@@ -9,6 +9,7 @@ import { DatePipe } from '@angular/common';
     selector: 'app-movie-item',
     templateUrl: './movie-item.component.html',
     styleUrls: ['./movie-item.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [RouterLink, DatePipe]
 })
 export class MovieItemComponent implements OnInit {
