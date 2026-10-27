@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
-import { Observable } from "rxjs";
+import { Observable, of } from "rxjs";
 
 import { Movie } from "../../models/movie.model";
 import { MovieService } from "../../services/movie.service";
@@ -19,7 +19,9 @@ export class HomeComponent implements OnInit {
 
   constructor(private movieService: MovieService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.movies$ = this.movieService.getLastSearchResults() || of([]);
+  }
 
   onSearch(searchTerm: string) {
     this.movies$ = this.movieService.searchMovies(searchTerm);
