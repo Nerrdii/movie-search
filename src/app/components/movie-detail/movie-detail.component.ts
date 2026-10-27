@@ -1,31 +1,31 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { Location, AsyncPipe, DatePipe } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
+import { Location, AsyncPipe, DatePipe } from "@angular/common";
+import { ActivatedRoute } from "@angular/router";
+import { Observable } from "rxjs";
+import { switchMap } from "rxjs/operators";
 
-import { Movie } from '../../models/movie.model';
-import { MovieService } from '../../services/movie.service';
+import { Movie } from "../../models/movie.model";
+import { MovieService } from "../../services/movie.service";
 
 @Component({
-    selector: 'app-movie-detail',
-    templateUrl: './movie-detail.component.html',
-    styleUrls: ['./movie-detail.component.css'],
-    changeDetection: ChangeDetectionStrategy.Eager,
-    imports: [AsyncPipe, DatePipe]
+  selector: "app-movie-detail",
+  templateUrl: "./movie-detail.component.html",
+  styleUrls: ["./movie-detail.component.css"],
+  changeDetection: ChangeDetectionStrategy.Eager,
+  imports: [AsyncPipe, DatePipe],
 })
 export class MovieDetailComponent implements OnInit {
-  movie$: Observable<Movie>;
+  movie$!: Observable<Movie>;
 
   constructor(
     private location: Location,
     private route: ActivatedRoute,
-    private movieService: MovieService
+    private movieService: MovieService,
   ) {}
 
   ngOnInit() {
     this.movie$ = this.route.params.pipe(
-      switchMap((params) => this.movieService.getMovie(+params['id']))
+      switchMap((params) => this.movieService.getMovie(+params["id"])),
     );
   }
 
